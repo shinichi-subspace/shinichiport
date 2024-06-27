@@ -192,7 +192,6 @@ main {
 .photoff:hover {
     opacity: 0.9;
     transform: scale(1.1);
-    padding-top: 7%;
 }
 footer {
     font-family: ヒラギノ明朝 ProN W3;
