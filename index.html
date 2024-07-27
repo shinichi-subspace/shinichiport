@@ -13,6 +13,7 @@
 <header>
     <div class="sphoto">
     <img src="写真.JPG">
+    <div id="tooltip" class="tooltip">ビルすき 水うま</div>
     </div>
 </header>
 <main>
@@ -95,9 +96,22 @@
 <footer>
     <h2>諸連絡はいずれかのSNSのダイレクトメールまたは下記のメールアドレスよりお願い致します。</h2>
 <p class="maila">shinichi79561@gmail.com</p>
-<p class="chosa">©️ shinichi</p>
+<p class="chosa">©️ shinichi 2024</p>
 </footer>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+    $(document).ready(function(){
+        $('.sphoto').click(function() {
+            $('#tooltip').css('visibility', 'visible').css('opacity', '1');
+        });
+
+    $(document).click(function(event) {
+        if (!$(event.target).closest('.sphoto, #tooltip').length) {
+            $('#tooltip').css('visibility', 'hidden').css('opacity', '0');
+        }
+      });
+});
+
     document.addEventListener('dragstart', function(e) {
         if (e.target.tagName === 'IMG') {
             e.preventDefault();

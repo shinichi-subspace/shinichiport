@@ -12,6 +12,9 @@
         width: 100%;
         height: auto;
     }
+    .tooltip {
+        display: none;
+    }
     .yoo {
         flex-direction: column;
        }
@@ -94,6 +97,9 @@
     .sphoto img {
         width: 100%; /* アイコン画像のサイズを調整 */
         height: auto;
+    }
+    .tooltip {
+        display: none;
     }
     .yoo {
         flex-direction: column;
@@ -201,6 +207,9 @@
           width: 100%;
           height: auto;
       }
+      .tooltip {
+        display: none;
+    }
       .yoo {
           flex-direction: column;
          }
@@ -264,7 +273,7 @@
         left: 4%;
     }
 } 
-
+/* デスクトップ用 */
 @media (min-width: 1200px) {
     .container {
         width: 100%;
@@ -316,5 +325,17 @@
         padding: 3%;
         position: relative;
     }
-
+    .tooltip {
+        visibility: hidden;
+        width: 20%;
+        padding: 1%;
+        background-color: #EEFFFF;
+        color: black;
+        text-align: center;
+        position: absolute;
+        border-radius: .4em;
+        position: relative;
+        left: 83%;
+        border: 1px solid black;
+    }
  }
