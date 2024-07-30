@@ -327,15 +327,18 @@
     }
     .tooltip {
         visibility: hidden;
-        width: 20%;
+        position: absolute;
+        width: 15%;
         padding: 1%;
         background-color: #EEFFFF;
         color: black;
         text-align: center;
-        position: absolute;
         border-radius: .4em;
-        position: relative;
-        left: 83%;
+        left: 69%;
         border: 1px solid black;
+    }
+    .sphoto.active .tooltip {
+        visibility: visible; /* アクティブなときに表示 */
+        opacity: 1;
     }
  }

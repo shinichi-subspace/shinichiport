@@ -16,8 +16,8 @@
 <body>
 <header>
     <div class="sphoto">
-    <img src="写真.JPG">
-    <div id="tooltip" class="tooltip">ビルすき 水うま</div>
+    <img src="写真.JPG" alt="新一の画像" id="tooltipImage" class="tooltip-image">
+    <div id="tooltip" class="tooltip"></div>
     </div>
 </header>
 <main>
@@ -36,7 +36,7 @@
     <a href="https://note.com/space6535" target="_blank">
         <img src="photoc.PNG" class="photoc">
     </a>
-    <a href="https://note.com/space6535/n/n0876936129ec" target="_blank">
+    <a href="https://note.com/space6535/n/n57bf126c08ce" target="_blank">
         <img src="photod.PNG" class="photod">
     </a>
 </div>
@@ -104,18 +104,6 @@
 </footer>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    $(document).ready(function(){
-        $('.sphoto').click(function() {
-            $('#tooltip').css('visibility', 'visible').css('opacity', '1');
-        });
-
-    $(document).click(function(event) {
-        if (!$(event.target).closest('.sphoto, #tooltip').length) {
-            $('#tooltip').css('visibility', 'hidden').css('opacity', '0');
-        }
-      });
-});
-
     document.addEventListener('dragstart', function(e) {
         if (e.target.tagName === 'IMG') {
             e.preventDefault();
@@ -124,6 +112,27 @@
    document.addEventListener('contextmenu', function(e) {
     if (e.target.tagName === 'IMG') {
         e.preventDefault();
+    }
+   });
+
+   const words = ["ビルすき 水うま", "I love you", "2030年のユーチューバーも緊急で動画まわすのかな", "ありがとう"];
+   let currentIndex = 0;
+
+   const tooltip = document.getElementById('tooltip');
+   const image = document.getElementById('tooltipImage');
+   const sphoto = image.parentElement;
+
+   image.addEventListener('click', () => {
+    tooltip.textContent = words[currentIndex];
+    currentIndex++;
+    sphoto.classList.add('active');
+    if (currentIndex >= words.length) {
+        currentIndex = 0;
+    }
+   });
+   document.addEventListener('click', (event) => {
+    if (event.target !== image) {
+        sphoto.classList.remove('active');
     }
    });
 </script>
